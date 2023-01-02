@@ -23,5 +23,13 @@ console.log(output); // --> 35 (= -1 * -5 * 7)
 */
 
 const largestProductOfThree = function (arr) {
-  // TODO: 여기에 코드를 작성합니다.
+  // val1 = 모두 양수
+  // val2 = 앞 두 개 음수
+  // val3 = 음/양/0 조합
+  arr = arr.sort((a,b)=>a-b) // -1 0 1 2
+  let len = arr.length;
+
+  let val1 = arr[len-1] * arr[len-2] * arr[len-3]
+  let val2 = arr[0] * arr[1] * arr[len-1]
+  return Math.max(val1, val2)
 };
